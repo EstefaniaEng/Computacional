@@ -1,0 +1,159 @@
+\documentclass[12pt,spanish]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{palatino,url}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+
+
+\title{El péndulo: Resumen de página de wikipedia}
+\author{Estefania Eng Duran}
+
+\begin{document}
+\maketitle
+
+\section{Péndulo simple}
+
+Se le llama péndulo simple porque es una idealización del "péndulo real". Un modelo idealizado  asume hechos sobre los fenómenos que son ciertamente falsos pero aun así nos permite entender, describir e interpretar un fenómeno de la naturaleza. En este caso suponemos que
+
+    \begin{itemize}
+      \item La cuerda o varilla en donde se mece el cuerpo carece de masa y no varía en su longitud
+      \item El cuerpo es una masa puntual
+      \item El movimiente ocurre solo en dos dimensiones, o sea, el cuerpo no traza una elipse sino un arco
+      \item No se pierde energía por fricción o resistencia del aire
+      \item El campo gravitacional es uniforme
+      \item El punto de soporte es inmóvil
+    \end{itemize}
+
+La ecuación diferencial que describe al péndulo simple es
+
+ \begin{equation}
+    \frac{\mathrm d^2 \theta}{\mathrm d t^2} + \frac{g}{\ell} \sin \theta =  0
+ \end{equation}
+
+donde $g$ es la aceleración debido a la gravedad, $\ell$ es la longitud del péndulo y $\theta$ es la enlongación angular, o sea, el ángulo que forma la varilla con la vertical.
+
+ \begin{figure}[ht]
+   \centering
+     \includegraphics[width=0.5\textwidth]{pendulo}
+   \caption{Trigonometría del péndulo simple.}
+ \end{figure}
+
+Existen diferentes maneras de derivar la ecuación anterior. A continuación la vamos a encontrar usando el principio de conservación de energía mecánica. Cualquier objeto que caiga una distancia vertical $h$ obtendrá energía cinética igual a la energía potencial que perdió en esa caida. El cambio en energía potencial está dado por 
+
+    \[\Delta U = mgh\]
+
+el cambio en la energía cinetica, considerando que el cuerpo parte del reposo, es
+
+
+    \[\Delta K = \frac{1}{2} mv^2 \]
+
+Como no hay pérdida de energía, el cambio en la energía potencial debe ser igual al cambio en la energía cinética
+
+\[\frac{1}{2} mv^2 = mgh\]
+
+el cambio en la velocidad para un cambio en altura dado puede expresarse como
+
+    \[v = \sqrt{2gh}\].
+
+Usando la fórmula para longitud de arco $s$
+
+    \[s = \ell\theta\]
+
+mostrada arriba, esta ecuación se puede reescribir en términos de $\dfrac{\mathrm d \theta}{\mathrm d t}$
+
+    \[v = {\ell}{\frac{\mathrm d \theta}{\mathrm d t}} = \sqrt{2gh}\]
+
+    \[\frac{\mathrm d \theta}{\mathrm d t} = \frac{1}{\ell} \sqrt{2gh}\]
+
+aquí $h$ es la distacia vertical que el péndulo cayó. Obsérvese la figura 1, si el péndulo empieza su trayectoria desde un ángulo inicial $\theta_0$, entonces $y_0$, la distancia vertical desde el punto de soporte, está dado por
+
+    \[y_0 = \ell\cos\theta_0\]
+
+de manera similar, para $y_1$, tenemos
+
+    \[y_1 = \ell\cos\theta\]
+
+entonces $h$ es la diferencia entre las dos
+
+    \[h = \ell\left(\cos\theta-\cos\theta_0\right)\]
+
+en términos de  $\frac{\mathrm d \theta}{\mathrm d t}$
+
+    \[\frac{\mathrm d \theta}{\mathrm d t} = \sqrt{{2g\over \ell}\left(\cos\theta-\cos\theta_0\right)}\]
+
+Esta ecuación se conoce como la primera integral de movimiento. Nos da la velocidad en términos de la posición e incluye una constante de integración relacionada a la elongación inicial ($\theta_0$). Aplicando la regla de la cadena
+
+    \[{\frac{\mathrm d}{\mathrm d t} \frac{\mathrm d \theta}{\mathrm d t} = \frac{\mathrm d \theta}{\mathrm d t}\sqrt{{2g\over \ell}\left(\cos\theta-\cos\theta_0\right)}}\]
+    
+    \[\frac{\mathrm d \theta}{\mathrm d t} = {1\over 2}{-(2g/\ell) \sin\theta\over\sqrt{(2g/\ell) \left(\cos\theta-\cos\theta_0\right)}}\frac{\mathrm d \theta}{\mathrm d t}\]
+    
+    \[\frac{\mathrm d^2 \theta}{\mathrm d t^2} = {1\over 2}{-(2g/\ell) \sin\theta\over\sqrt{(2g/\ell) \left(\cos\theta-\cos\theta_0\right)}}\sqrt{{2g\over \ell} \left(\cos\theta-\cos\theta_0\right)} = -{g\over \ell}\sin\theta\]
+    
+    
+    \[\frac{\mathrm d^2 \theta}{\mathrm d t^2} + {g\over \ell}\sin\theta = 0\]
+
+es el mismo resultado que utilizando análisis de fuerza.
+
+\section{Oscilaciones pequeñas}
+
+La ecuación diferencial mostrada arriba es difícil de resolver y no tiene solución que pueda ser expresada en términos de funciones elementales. Si consideramos tan sólo oscilaciones de pequeña amplitud, de modo que el ángulo $\theta$ sea siempre suficientemente pequeño, entonces el valor de $\sin\theta$ será muy próximo al valor de $\theta$ expresado en radianes ($\sin\theta \approx \theta$, para $\theta$ suficientemente pequeño). Usando esta aproximación, tenemos
+
+    \[\frac{\mathrm d^2 \theta}{\mathrm d t^2} + {g\over \ell} \theta = 0\]
+    
+que es la ecuación del oscilador armónico. La solución es
+
+    \[\theta = \Theta\sin(\omega t + \phi) \]
+
+siendo $\omega$ la frecuencia angular de las oscilaciones, a partir de la cual determinamos el período de las mismas
+
+    \[\omega = \sqrt{g \over l} \qquad\Rightarrow\qquad T = 2\pi\sqrt{\ell \over g}\]
+    
+Las magnitudes $\Theta$, y $\phi$, son dos constantes arbitrarias (determinadas por las condiciones iniciales) correspondientes a la amplitud angular y a la fase inicial del movimiento.
+
+\section{Oscilaciones de mayor amplitud}
+
+La integración de la ecuación del movimiento, sin la aproximación de pequeñas oscilaciones, es considerablemente más complicada e involucra integrales elípticas de primera especie, por lo que omitimos el desarrollo que llevaría a la siguiente solución \cite{nel}
+
+    \[T\left(\theta\right) = T_{0}\left[\sum_{n=0}^{\infty} \left(\frac{(2n)!}{2^{2n}(n!)^{2}}\right)^{2}\sin^{2n}\left(\frac{\theta}{2}\right)\right]\]
+    
+donde $\theta$, es la amplitud angular. Así pues, el periodo es función de la amplitud de las oscilaciones.
+
+ \begin{figure}[!ht]
+   \centering
+     \includegraphics[width=0.9\textwidth]{Desviacionperiodo}
+   \caption{Dependencia del período del péndulo con la amplitud angular de las oscilaciones.}
+ \end{figure}
+
+En la Figura hemos representado gráficamente la variación de $T$ (en unidades de $T_0$) en función de $\theta$, tomando un número creciente de términos en la expresión anterior. Se observará que el periodo $T$ difiere significativamente del correspondiente a las oscilaciones de pequeña amplitud ($T_0$) cuando $\theta > 20^{\circ}$ . Para valores de $\theta$ suficientemente pequeños, la serie converge muy rápidamente; en esas condiciones será suficiente tomar tan sólo el primer término correctivo y sustituir $\sin\theta/2$ por $\theta/2$, de modo que tendremos
+
+    \[T \approx T_0 \left ( 1 + \frac{\theta^2}{16} \right )\]
+
+donde $\theta$ se expresará en radianes. Esta aproximación resulta apropiada en gran parte de las situaciones que encontramos en la práctica; de hecho, la corrección que introduce el término $\theta^2/16$ representa menos de 0.2 \% para amplitudes inferiores a $10^{\circ}$.
+
+Para oscilaciones de pequeña amplitud, las expresiones anteriores se reducen a
+
+    \[T \approx T_0 = 2 \pi \sqrt{\ell\over g}\]
+
+\begin{thebibliography}{9}
+
+\bibitem{nel}
+  Nelson, Robert; M. G. Olsson,
+  \emph{The pendulum — Rich physics from a simple system},
+  American Journal of Physics 54 (2): pp. 112–121.
+  February 1986.
+
+\bibitem{ma}
+ Marion, Jerry B.
+ \emph{Dinámica clásica de las partículas y sistemas},
+ Editorial Reverté, Barcelona, 1996.
+
+
+
+\end{thebibliography}
+
+
+
+\end{document}
